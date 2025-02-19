@@ -1,36 +1,29 @@
-# nina-template-r
+# Bayesian path analysis of life-history traits in a capital breeder
 
-Modify this `README.md` file, to explain what your software does.
+## Project description
+We have developed a mechanistic path model to disentangle the direct and indirect effects of density dependence and environmental variability on body mass and reproductive success in a capital breeder. All models and visualisations are run in R.
+This study focuses on one extensively monitored herd of semi-domestic reindeer in northern Norway. We included individuals of known age and older than 1 year, with at least one complete set of observations on three consecutive occasions: in autumn, the subsequent spring, and the following autumn. This resulted in a sample size of 814 observations from 235 females in 18 years.
+To assess the contribution of direct, indirect, and total effects of environmental variables and population density on seasonal body mass and reproductive success, we built a mechanistic path model. The path model consisted of three sub-models, one for female spring body mass, one for reproductive success, and one for female autumn body mass. The model allowed for the mediating effect of spring body mass on reproductive success and the mediating effect of spring body mass and reproductive success on autumn body mass.
+The path model was first fitted in piecewiseSEM to test the conditional independence claims stated by the path model. Then the path coefficients were estimated in a Bayesian framework in STAN through the brms-package.
 
-# Additional resources
+## Data
+The data is in the file "data.txt".
 
-In addition to this template, here is a list of useful resources you could start from:
-- https://github.com/NINAnor/NinaR
+## Scripts
+To run through the scripts you first need to run script 01 to load and formate the data. Script 02 runs the models.
 
-# Good practices
+Script 03 shows the diagnostics of the models, using both ShinyStan and by doing diagnostic plots..
 
-## .gitignore
+Script 04 to 11 generates the figures S2 to S13, each script loads the necessary model run to generate the figures. The packages need to loaded from script 01.
 
-Add paths and files that you do not want to be committed by adding them to .gitignore.
+## Output
+All the output is in the repository as png or pdf.
 
-## pre-commit
+## Acknowledgments
+I would like to express my gratitude to my supervisors Torkild Tveraa, Sandra Hamel, John-André Henden, Audun Stien and Nigel Gilles Yoccoz or their guidance and support throughout this project.
 
-`pre-commit` can run tools to check your changes and refactor code (using `styler`), to keep your repository clean and avoid common mistakes. The list of actions that are executed are defined in `.pre-commit-config.yaml`.
+## Contact
+* Mikaela Simmonds
+* mikaela.tilman@nina.no
 
-### Installation
 
-1. Install Python if not available. It can be downloaded from [python.org/downloads](https://www.python.org/downloads/). Be sure to add Python to your PATH.
-2. Install `pipx`, as it is the suggested way to install Python tools:
-   - Windows users: `py -3 -m pip install pipx`
-   - Linux users: `python3 -m pip install pipx`
-3. Install `pre-commit`: `pipx install pre-commit`
-4. Configure PATH: `pipx ensurepath`
-5. Close and open your shell again
-6. Enter into your git repository and install the hooks: `pre-commit install` (optional, but recommended)
-
-### How to use it
-
-In case you executed `pre-commit install`, `pre-commit` hooks will be executed each time you will try to commit (`git commit`). If any of the checks fail or if any files that is going to be committed is changed (because a tool refactored or cleaned it), the commit will fail.
-
-The suggested method to use `pre-commit` is to run it before trying to commit your changes, using `pre-commit run -a`. You can run this command multiple times, to check if the changes are ready to be committed.
-After all the tests succeeded, the changes can be staged (`git add`) and committed.
