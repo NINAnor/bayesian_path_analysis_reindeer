@@ -1,4 +1,3 @@
-setwd("C:/Users/ann.tillman/OneDrive - NINA/R-directory/Paper_1/final_R/git_hub/01_data")
 data <- data%>%
   purrr::modify_at(c("age"), factor) #need to factorise age again when R restarted
 
