@@ -1,4 +1,3 @@
-setwd("C:/Users/ann.tillman/OneDrive - NINA/R-directory/Paper_1/final_R/git_hub/01_data")
 
 #for data cleaning
 library(dplyr)
